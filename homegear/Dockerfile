@@ -20,8 +20,7 @@ COPY start.sh /start.sh
 COPY main.conf /etc/homegear.config/main.conf
 COPY rpcservers.conf /etc/homegear.config/rpcservers.conf
 COPY php.ini /etc/homegear.config/php.ini
-RUN --platform linux/arm/v7
 RUN chmod +x /start.sh
-ENTRYPOINT ["/bin/bash", "-c", "/start.sh"]
+ENTRYPOINT ["--platform linux/arm/v7", "/bin/bash", "-c", "/start.sh"]
 
 EXPOSE 2001 2002 2003
